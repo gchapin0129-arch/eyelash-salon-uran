@@ -1,0 +1,313 @@
+@use "mixin" as *;
+
+.contact-page {
+  padding: 80px 0 48px;
+
+  @include sp {
+    padding: 48px 0 40px;
+  }
+
+  &-visual {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 80px;
+    margin-bottom: 48px;
+
+    @include sp {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+
+    img {
+      width: 50%;
+      height: 320px;
+      object-fit: cover;
+      display: block;
+
+      @include sp {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  &-heading {
+    width: 45%;
+
+    @include sp {
+      width: 100%;
+    }
+
+    h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 40px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      color: #6a5b54;
+      margin-bottom: 4px;
+
+      @include sp {
+        font-size: 32px;
+      }
+    }
+  }
+
+  &-subtitle {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    margin-bottom: 24px;
+
+    @include sp {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &-lead {
+    font-size: 12px;
+    line-height: 2;
+    letter-spacing: 0.08em;
+    margin-bottom: 24px;
+
+    @include sp {
+      font-size: 11px;
+      margin-bottom: 20px;
+
+      br {
+        display: none;
+      }
+    }
+  }
+
+  &-time {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 24px;
+
+    p {
+      font-size: 10px;
+      letter-spacing: 0.05em;
+    }
+  }
+
+  .contact-reservation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+    padding: 24px 32px;
+    background: #f8f5f2;
+    margin-bottom: 56px;
+
+    @include sp {
+      display: block;
+      padding: 24px 20px;
+      margin-bottom: 48px;
+    }
+
+    &-text {
+      @include sp {
+        margin-bottom: 20px;
+      }
+
+      h3 {
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 0.1em;
+        color: #6a5b54;
+        margin-bottom: 6px;
+
+        @include sp {
+          font-size: 14px;
+          line-height: 1.7;
+        }
+      }
+
+      p {
+        font-size: 10px;
+        line-height: 1.8;
+        letter-spacing: 0.05em;
+      }
+    }
+
+    &-buttons {
+      display: flex;
+      gap: 12px;
+      flex-shrink: 0;
+
+      @include sp {
+        gap: 8px;
+      }
+
+      a {
+        min-width: 150px;
+        padding: 12px 20px;
+        text-align: center;
+        background: #fff;
+        font-size: 11px;
+        letter-spacing: 0.1em;
+        color: #6a5b54;
+
+        @include sp {
+          width: 50%;
+          min-width: 0;
+          padding: 12px 8px;
+          font-size: 10px;
+        }
+
+        &:last-child {
+          background: #6a5b54;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .contact-form {
+    max-width: 720px;
+    margin: 0 auto;
+
+    @include sp {
+      width: 100%;
+    }
+
+    &-heading {
+      text-align: center;
+      margin-bottom: 32px;
+
+      @include sp {
+        margin-bottom: 28px;
+      }
+
+      h2 {
+        font-size: 24px;
+        font-weight: 400;
+        letter-spacing: 0.1em;
+        color: #6a5b54;
+        margin-bottom: 8px;
+
+        @include sp {
+          font-size: 20px;
+        }
+      }
+
+      p {
+        font-size: 11px;
+        line-height: 1.8;
+        letter-spacing: 0.1em;
+
+        @include sp {
+          font-size: 10px;
+        }
+      }
+    }
+
+    &-item {
+      margin-bottom: 24px;
+
+      @include sp {
+        margin-bottom: 20px;
+      }
+
+      > label,
+      .contact-form-label {
+        display: block;
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        margin-bottom: 8px;
+
+        @include sp {
+          font-size: 11px;
+        }
+      }
+
+      > input,
+      textarea {
+        width: 100%;
+        padding: 14px 16px;
+        background: #fff;
+        border: 1px solid #eee8e4;
+        font-family: "Noto Serif JP", serif;
+        font-size: 12px;
+        color: #333;
+
+        &::placeholder {
+          color: #bbb;
+        }
+      }
+
+      > input {
+        height: 48px;
+      }
+
+      textarea {
+        height: 160px;
+        resize: vertical;
+
+        @include sp {
+          height: 140px;
+        }
+      }
+    }
+
+    &-radio {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+
+      @include sp {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px;
+        background: #f8f5f2;
+        font-size: 10px;
+        cursor: pointer;
+
+        @include sp {
+          padding: 12px 10px;
+        }
+      }
+    }
+
+    &-submit {
+      text-align: center;
+      margin-top: 32px;
+
+      @include sp {
+        margin-top: 28px;
+      }
+
+      button {
+        width: 240px;
+        padding: 16px;
+        background: #6a5b54;
+        color: #fff;
+        font-family: "Noto Serif JP", serif;
+        font-size: 12px;
+        letter-spacing: 0.15em;
+        cursor: pointer;
+        transition: 0.3s;
+
+        @include sp {
+          width: 100%;
+          max-width: 280px;
+        }
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}

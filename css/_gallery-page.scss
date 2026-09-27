@@ -1,0 +1,194 @@
+
+@use "mixin" as *;
+
+.gallery-page {
+  padding: 80px 0 120px;
+
+  @include sp {
+    padding: 48px 0 72px;
+  }
+
+  &-visual {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 80px;
+    margin-bottom: 64px;
+
+    @include sp {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 32px;
+      margin-bottom: 48px;
+    }
+
+    img {
+      width: 50%;
+      height: 320px;
+      object-fit: cover;
+      display: block;
+
+      @include sp {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  &-heading {
+    width: 45%;
+
+    @include sp {
+      width: 100%;
+    }
+
+    h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 40px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: #6a5b54;
+      margin-bottom: 8px;
+
+      @include sp {
+        font-size: 32px;
+      }
+    }
+  }
+
+  &-subtitle {
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+    font-style: italic;
+    letter-spacing: 0.05em;
+    margin-bottom: 32px;
+
+    @include sp {
+      font-size: 16px;
+      margin-bottom: 24px;
+    }
+  }
+
+  &-lead {
+    font-size: 13px;
+    line-height: 2;
+    letter-spacing: 0.1em;
+
+    @include sp {
+      font-size: 12px;
+    }
+  }
+
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px 24px;
+
+    @include sp {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px 16px;
+    }
+  }
+
+  &-item {
+    img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
+      margin-bottom: 12px;
+
+      @include sp {
+        margin-bottom: 10px;
+      }
+    }
+
+    &-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+
+      @include sp {
+        gap: 4px;
+      }
+
+      h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.3;
+        color: #6a5b54;
+
+        @include sp {
+          font-size: 14px;
+        }
+      }
+
+      span {
+        flex-shrink: 0;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        color: #999;
+
+        @include sp {
+          font-size: 9px;
+        }
+      }
+    }
+  }
+}
+
+.gallery-info {
+  padding: 72px 0;
+  background: #f8f5f2;
+
+  @include sp {
+    padding: 48px 0;
+  }
+
+  &-content {
+    padding: 48px 56px;
+    background: #fff;
+
+    @include sp {
+      padding: 32px 24px;
+    }
+  }
+
+  &-label {
+    font-family: "Playfair Display", serif;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    margin-bottom: 12px;
+    color: #999;
+
+    @include sp {
+      font-size: 10px;
+    }
+  }
+
+  &-text {
+    h2 {
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 1.8;
+      color: #6a5b54;
+      margin-bottom: 16px;
+
+      @include sp {
+        font-size: 18px;
+      }
+    }
+
+    > p:last-child {
+      font-size: 12px;
+      line-height: 2;
+      letter-spacing: 0.1em;
+
+      @include sp {
+        font-size: 11px;
+      }
+    }
+  }
+}

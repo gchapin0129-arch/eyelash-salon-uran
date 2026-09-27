@@ -1,0 +1,55 @@
+
+@use "mixin" as *;
+
+.concept {
+  &-content {
+    display: flex;
+    align-items: center;
+    gap: 72px;
+    max-width: 1040px;
+    margin: 0 auto;
+
+    @include sp {
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    img {
+      width: 35%;
+      object-fit: contain;
+      filter: sepia(35%) saturate(85%) brightness(85%);
+
+      @include sp {
+        width: 100%;
+      }
+    }
+  }
+
+  &-text {
+    width: 50%;
+
+    @include sp {
+      width: 100%;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 2;
+      letter-spacing: 0.1em;
+
+      @include sp {
+        font-size: 13px;
+      }
+    }
+  }
+
+  &-lead {
+    font-size: 18px;
+    margin-bottom: 24px;
+
+    @include sp {
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+  }
+}

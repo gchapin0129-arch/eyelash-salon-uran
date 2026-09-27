@@ -1,0 +1,63 @@
+
+@use "mixin" as *;
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  @include sp {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  h1 {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    color: #6a5b54;
+
+    @include sp {
+      font-size: 12px;
+    }
+
+    .header-logo {
+      font-family: "Playfair Display", serif;
+      font-size: 32px;
+      margin-right: 8px;
+
+      @include sp {
+        font-size: 24px;
+      }
+    }
+
+    .header-logo2 {
+      @include sp {
+        display: none;
+      }
+    }
+  }
+
+  .nav {
+    ul {
+      display: flex;
+      gap: 24px;
+
+      @include sp {
+        gap: 16px;
+      }
+    }
+
+    a {
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      color: #333;
+
+      @include sp {
+        font-size: 12px;
+      }
+    }
+  }
+}

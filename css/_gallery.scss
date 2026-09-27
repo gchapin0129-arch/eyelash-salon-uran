@@ -1,0 +1,54 @@
+
+@use "mixin" as *;
+
+.gallery {
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+
+    @include sp {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
+
+  &-item {
+    @include sp {
+      aspect-ratio: 3 / 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      display: block;
+
+      @include sp {
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+
+  &-more {
+    display: block;
+    width: 240px;
+    margin: 16px auto 0;
+    padding: 16px;
+    border: 1px solid #d8c8bf;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    background: #f8f5f2;
+
+    @include sp {
+      width: 100%;
+      padding: 12px;
+      font-size: 12px;
+    }
+  }
+}
